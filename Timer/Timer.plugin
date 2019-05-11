@@ -14,7 +14,7 @@ Developer Notes:
 
 Closing the timer will not interrupt the time,
 so you can close the timer whenever you want.
-To bring the timer back type command following command into the chat.
+To bring the timer back type the following command into the chat.
 /timer
 
 Alternatively you can create a shortcut which toggles the timer's visibility by typing following command into the chat.
