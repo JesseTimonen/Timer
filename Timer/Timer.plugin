@@ -18,7 +18,7 @@ To bring the timer back type the following command into the chat.
 /timer
 
 Alternatively you can create a shortcut which toggles the timer's visibility by typing following command into the chat.
-(English) :  /shortcut 1 /timer
+(English)  :  /shortcut 1 /timer
 (German) :  /kurztext 1 /timer
 (French)  :  /raccourci 1 /timer
 This action will generate a skill to your 1st slot of your skillbar, which allows you to toggle timer's visibility by using it.
@@ -49,7 +49,7 @@ List of all commands:
 
 /timer help - displays a list of all available commands.
 
-/timer - displays a list of all available commands.
+/timer - Toggles the timer's visibility.
 /timer toggle - Toggles the timer's visibility.
 /timer show - Makes the timer visible.
 /timer hide - Makes the timer hidden.
