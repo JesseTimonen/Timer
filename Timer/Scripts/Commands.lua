@@ -5,7 +5,10 @@ timerCommand = Turbine.ShellCommand();
 function timerCommand:Execute(cmd, args)
 	-- Check if command has arguments --
 	if string.len(args) < 1 then toggleVisibility(not timer:IsVisible()); return; end
-
+	
+	-- Display timer window if any command is activated --
+	toggleVisibility(true);
+	
 	-- Turn arguments to lower case characters --
 	args = string.lower(args);
 
