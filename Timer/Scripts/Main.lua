@@ -16,7 +16,8 @@ timer.Update = function()
 
     -- Display total time --
     time = getTime(Turbine.Engine.GetGameTime() - timer.startTime);
-    totalTimeLabel:SetText(string.format("Total Time\n%2.2d:%2.2d:%2.2d:%3.3d", time["hours"], time["minutes"], time["seconds"], time["milliseconds"]));
+    totalTimeLabel:SetText(string.format("%2.2d:%2.2d:%2.2d", time["hours"], time["minutes"], time["seconds"]));
+    totalTimeMillisecondsLabel:SetText(string.format(":%3.3d", time["milliseconds"]));
 
     -- Spacing to make sections look even --
     if (timer.section < 10) then
@@ -107,6 +108,7 @@ function addSection()
     local section = Turbine.UI.Label();
     section:SetSize(200, 20);
     section:SetVisible(true);
+    section:SetFont(Turbine.UI.Lotro.Font.Verdana16);
     sections:AddItem(section);
     sections:SetSelectedIndex(timer.section);
 end

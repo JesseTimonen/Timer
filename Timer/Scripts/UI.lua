@@ -47,13 +47,32 @@ end
 
 
 -- Total Time Label --
+titleLabel = Turbine.UI.Label();
+titleLabel:SetParent(timer);
+titleLabel:SetVisible(true);
+titleLabel:SetFont(Turbine.UI.Lotro.Font.Verdana20);
+titleLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleCenter);
+titleLabel:SetSize(150, 50);
+titleLabel:SetPosition(75, 30);
+titleLabel:SetText("Total Time");
+
 totalTimeLabel = Turbine.UI.Label();
 totalTimeLabel:SetParent(timer);
-totalTimeLabel:SetFont(Turbine.UI.Lotro.Font.Verdana16);
-totalTimeLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleCenter);
+totalTimeLabel:SetVisible(true);
+totalTimeLabel:SetFont(Turbine.UI.Lotro.Font.Verdana20);
+totalTimeLabel:SetTextAlignment(Turbine.UI.ContentAlignment.RightCenter);
 totalTimeLabel:SetSize(150, 50);
-totalTimeLabel:SetPosition(75, 40);
-totalTimeLabel:SetText("Total Time\n00:00:00:000");
+totalTimeLabel:SetPosition(95, 65);
+totalTimeLabel:SetText("00:00:00");
+
+totalTimeMillisecondsLabel = Turbine.UI.Label();
+totalTimeMillisecondsLabel:SetParent(timer);
+totalTimeMillisecondsLabel:SetVisible(true);
+totalTimeMillisecondsLabel:SetFont(Turbine.UI.Lotro.Font.Verdana16);
+totalTimeMillisecondsLabel:SetTextAlignment(Turbine.UI.ContentAlignment.leftCenter);
+totalTimeMillisecondsLabel:SetSize(150, 50);
+totalTimeMillisecondsLabel:SetPosition(180, 69);
+totalTimeMillisecondsLabel:SetText(":000");
 
 
 -- Scrollbar for Sections List --
