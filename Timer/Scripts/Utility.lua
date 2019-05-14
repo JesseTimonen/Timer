@@ -16,25 +16,6 @@ function getTime(totalTime)
 end
 
 
-
--- Build all timer sections --
-function createSections(parent, xPos, yPos, count)
-    data = {}
-
-    for i = 1, count do
-        local section = Turbine.UI.Label();
-        section:SetParent(parent);
-        section:SetSize(250, 50);
-        section:SetVisible(false);
-        section:SetPosition(xPos, yPos + (i * 20));
-        data[tostring(i)] = section;
-    end
-
-	return data;
-end
-
-
-
 -- Check the size of an array
 function getLenght(array)
 	-- Check is array empty --
