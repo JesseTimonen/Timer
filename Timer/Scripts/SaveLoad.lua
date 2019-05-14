@@ -10,6 +10,18 @@ function load(dataScope, key)
 end
 
 
+-- Parse datascope from string --
+function getDataScope(dataScope)
+    if (string.lower(dataScope) == "server") then
+        return Turbine.DataScope.Server;
+    elseif (string.lower(dataScope) == "character") then
+        return Turbine.DataScope.Character;
+    end
+
+    return dataScope;
+end
+
+
 -- Load Settings --
 function loadSettings()
     -- Load window's position --
