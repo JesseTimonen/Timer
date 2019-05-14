@@ -1,15 +1,3 @@
--- Parse datascope from string --
-function getDataScope(dataScope)
-    if (string.lower(dataScope) == "server") then
-        return Turbine.DataScope.Server;
-    elseif (string.lower(dataScope) == "character") then
-        return Turbine.DataScope.Character;
-    end
-
-    return dataScope;
-end
-
-
 function getTime(totalTime)
     -- Get hours, minutes, seconds and milliseconds from total time --
     local hours = totalTime / 3600;
