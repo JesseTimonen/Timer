@@ -2,23 +2,25 @@ timerCommand = Turbine.ShellCommand();
 
 
 -- Execute command --
-function timerCommand:Execute(cmd, args)
+function timerCommand:Execute(command, args)
 	-- Check if command has arguments --
 	if string.len(args) < 1 then toggleVisibility(not timer:IsVisible()); return; end
-	
+
 	-- Display timer window if any command is activated --
 	toggleVisibility(true);
-	
+
 	-- Turn arguments to lower case characters --
 	args = string.lower(args);
 
-	-- Help --
+	-- Help command--
 	if string.find(args, "help") == 1 then help(); return; end
 
-	-- Toggle visibility --
+	-- Visibility commands --
 	if string.find(args, "show") == 1 then toggleVisibility(true); return; end
 	if string.find(args, "hide") == 1 then toggleVisibility(false); return; end
 	if string.find(args, "toggle") == 1 then toggleVisibility(not timer:IsVisible()); return; end
+
+	-- Timer commands --
 	if string.find(args, "start") == 1 then startTimer(); return; end
 	if string.find(args, "stop") == 1 then stopTimer(); return; end
 	if string.find(args, "next") == 1 then nextSection(); return; end

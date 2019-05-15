@@ -1,5 +1,6 @@
 -- Plugin's name --
 pluginName = "Timer";
+settingsName = "Timer_Settings";
 
 -- Default settings --
 settings = {
@@ -15,3 +16,6 @@ rgb = {
     error = "<rgb=#FF0000>",
     clear = "</rgb>"
 };
+
+-- Load settings --
+loadSettings();

@@ -1,7 +1,6 @@
 -- Start Button --
 startTimerButton = Turbine.UI.Lotro.Button();
 startTimerButton:SetParent(timer);
-startTimerButton:SetVisible(true);
 startTimerButton:SetSize(120);
 startTimerButton:SetPosition(timer:GetWidth()/2 - startTimerButton:GetWidth()/2, timer:GetHeight() - 50);
 startTimerButton:SetText("Start");
@@ -49,7 +48,6 @@ end
 -- Total Time Label --
 titleLabel = Turbine.UI.Label();
 titleLabel:SetParent(timer);
-titleLabel:SetVisible(true);
 titleLabel:SetFont(Turbine.UI.Lotro.Font.Verdana20);
 titleLabel:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleCenter);
 titleLabel:SetSize(150, 50);
@@ -58,7 +56,6 @@ titleLabel:SetText("Total Time");
 
 totalTimeLabel = Turbine.UI.Label();
 totalTimeLabel:SetParent(timer);
-totalTimeLabel:SetVisible(true);
 totalTimeLabel:SetFont(Turbine.UI.Lotro.Font.Verdana20);
 totalTimeLabel:SetTextAlignment(Turbine.UI.ContentAlignment.RightCenter);
 totalTimeLabel:SetSize(150, 50);
@@ -67,7 +64,6 @@ totalTimeLabel:SetText("00:00:00");
 
 totalTimeMillisecondsLabel = Turbine.UI.Label();
 totalTimeMillisecondsLabel:SetParent(timer);
-totalTimeMillisecondsLabel:SetVisible(true);
 totalTimeMillisecondsLabel:SetFont(Turbine.UI.Lotro.Font.Verdana16);
 totalTimeMillisecondsLabel:SetTextAlignment(Turbine.UI.ContentAlignment.leftCenter);
 totalTimeMillisecondsLabel:SetSize(150, 50);

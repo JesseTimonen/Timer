@@ -3,13 +3,12 @@ timer:SetText("Timer");
 timer:SetVisible(true);
 timer:SetPosition(settings["windowPosition"]["xPos"], settings["windowPosition"]["yPos"]);
 timer:SetSize(300, 400);
-timer:SetZOrder(1000);
 timer.running = false;
 timer.section = 1;
 timer.startTime = 0;
-timer.sectionStartTime = 0;
 timer.elapsedTime = 0;
-timer.elapsedSectionTime = 0;
+timer.sectionStartTime = 0;
+timer.sectionElapsedTime = 0;
 timer.Update = function()
     local time;
     local spacing;
@@ -67,7 +66,7 @@ end
 function stopTimer()
     timer.running = false;
     timer.elapsedTime = Turbine.Engine.GetGameTime() - timer.startTime;
-    timer.elapsedSectionTime = Turbine.Engine.GetGameTime() - timer.sectionStartTime;
+    timer.sectionElapsedTime = Turbine.Engine.GetGameTime() - timer.sectionStartTime;
     timer:SetWantsUpdates(false);
 
     nextSectionButton:SetVisible(false);
@@ -85,7 +84,7 @@ function continueTimer()
     
     timer.running = true;
     timer.startTime = Turbine.Engine.GetGameTime() - timer.elapsedTime;
-    timer.sectionStartTime = Turbine.Engine.GetGameTime() - timer.elapsedSectionTime;
+    timer.sectionStartTime = Turbine.Engine.GetGameTime() - timer.sectionElapsedTime;
     timer:SetWantsUpdates(true);
 
     startTimerButton:SetVisible(false);
@@ -96,18 +95,20 @@ end
 
 
 function nextSection()
-    if (timer.running) then
-        addSection();
-        timer.section = timer.section + 1;
-        timer.sectionStartTime = Turbine.Engine.GetGameTime();
+    -- Only perform this action when time is running --
+    if (not timer.running) then
+        return;
     end
+
+    addSection();
+    timer.section = timer.section + 1;
+    timer.sectionStartTime = Turbine.Engine.GetGameTime();
 end
 
 
 function addSection()
     local section = Turbine.UI.Label();
     section:SetSize(200, 20);
-    section:SetVisible(true);
     section:SetFont(Turbine.UI.Lotro.Font.Verdana16);
     sections:AddItem(section);
     sections:SetSelectedIndex(timer.section);

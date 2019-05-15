@@ -8,7 +8,7 @@ Plugins[pluginName].Unload = function()
 	-- Save windows position --
 	settings["windowPosition"]["xPos"] = tostring(timer:GetLeft());
 	settings["windowPosition"]["yPos"] = tostring(timer:GetTop());
-	save("Character", "Timer_Settings", settings);
-	
+	save("server", settingsName, settings);
+
 	notification("Unactivated");
 end

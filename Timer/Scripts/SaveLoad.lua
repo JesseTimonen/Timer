@@ -24,11 +24,6 @@ end
 
 -- Load Settings --
 function loadSettings()
-    -- Load window's position --
-    local _settings = load("Character", "Timer_Settings");
+    local _settings = load("server", settingsName);
     if _settings ~= nil then settings = _settings; end
 end
-
-
--- Load settings --
-loadSettings();
