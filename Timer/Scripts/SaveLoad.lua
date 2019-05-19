@@ -24,6 +24,6 @@ end
 
 -- Load Settings --
 function loadSettings()
-    local _settings = load("server", settingsName);
+    local _settings = load("server", settingsFileName);
     if _settings ~= nil then settings = _settings; end
 end

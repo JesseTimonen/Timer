@@ -1,4 +1,4 @@
--- Parse Hours, minutes, secnds and milliseconds from given time --
+-- Parse Hours, minutes, secnds and milliseconds from given time in seconds --
 function getTime(totalTime)
     return {
         ["hours"] = totalTime / 3600,

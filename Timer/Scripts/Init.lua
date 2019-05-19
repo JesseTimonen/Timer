@@ -1,6 +1,8 @@
 -- Plugin's name --
 pluginName = "Timer";
-settingsName = "Timer_Settings";
+
+-- File names --
+settingsFileName = "Timer_Settings";
 
 -- Default settings --
 settings = {
