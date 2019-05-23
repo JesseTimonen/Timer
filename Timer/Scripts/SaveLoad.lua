@@ -22,7 +22,16 @@ function getDataScope(dataScope)
 end
 
 
--- Load Settings --
+-- Save settings --
+function saveSettings()
+    -- Save windows position --
+    settings["windowPosition"]["xPos"] = tostring(timer:GetLeft());
+    settings["windowPosition"]["yPos"] = tostring(timer:GetTop());
+    save("server", settingsFileName, settings);
+end
+
+
+-- Load settings --
 function loadSettings()
     local _settings = load("server", settingsFileName);
     if _settings ~= nil then settings = _settings; end

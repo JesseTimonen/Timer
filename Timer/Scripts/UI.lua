@@ -75,7 +75,7 @@ totalTimeMillisecondsLabel:SetText(":000");
 scrollbar = Turbine.UI.Lotro.ScrollBar();
 scrollbar:SetParent(timer);
 scrollbar:SetOrientation(Turbine.UI.Orientation.Vertical);
-scrollbar:SetPosition(250, 110);
+scrollbar:SetPosition(250, 120);
 scrollbar:SetSize(10, 160);
 scrollbar:SetVisible(false);
 

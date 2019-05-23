@@ -5,10 +5,6 @@ end
 
 -- Unload Plugin --
 Plugins[pluginName].Unload = function()
-	-- Save windows position --
-	settings["windowPosition"]["xPos"] = tostring(timer:GetLeft());
-	settings["windowPosition"]["yPos"] = tostring(timer:GetTop());
-	save("server", settingsFileName, settings);
-
+	saveSettings();
 	notification("Unactivated");
 end
