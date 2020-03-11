@@ -13,7 +13,7 @@ function timerCommand:Execute(command, args)
 	args = string.lower(args);
 
 	-- Help command--
-	if string.find(args, "help") == 1 then help(); return; end
+	if string.find(args, "help") == 1 then commandsHelp(); return; end
 
 	-- Visibility commands --
 	if string.find(args, "show") == 1 then toggleVisibility(true); return; end
@@ -29,7 +29,7 @@ end
 
 
 -- Display list of all available commands --
-function help()
+function commandsHelp()
 	notification(
 		"List of all commands:\n" ..
 		"/timer - Toggles the timer's visibility.\n" ..

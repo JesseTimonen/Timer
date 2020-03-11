@@ -18,13 +18,12 @@ function getDataScope(dataScope)
         return Turbine.DataScope.Character;
     end
 
-    return dataScope;
+    return Turbine.DataScope.Server;
 end
 
 
 -- Save settings --
 function saveSettings()
-    -- Save windows position --
     settings["windowPosition"]["xPos"] = tostring(timer:GetLeft());
     settings["windowPosition"]["yPos"] = tostring(timer:GetTop());
     save("server", settingsFileName, settings);

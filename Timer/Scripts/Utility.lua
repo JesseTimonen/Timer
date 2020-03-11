@@ -12,15 +12,13 @@ end
 -- Check the size of an array
 function getLenght(array)
     -- Check is array empty --
-    if array == nil then
-        return 0;
-    end
-    
+    if array == nil then return 0; end
+
     -- Get size --
     local count = 0;
     for a, b in pairs(array) do
         count = count + 1;
     end
-    
+
     return count;
 end

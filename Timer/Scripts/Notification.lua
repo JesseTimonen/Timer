@@ -3,13 +3,13 @@ function notification(message)
 	if (message == nil) then message = "nil"; end
 
 	if (type(message) ~= "string") then
-		var_dump(message);
+		debug(message);
 	else
 		Turbine.Shell.WriteLine(rgb["pluginName"] .. pluginName .. rgb["clear"] .. ": " .. message);
 	end
 end
 
-
+-- Debugging variables --
 local function string(o)
 	return '"' .. tostring(o) .. '"';
 end
@@ -18,7 +18,7 @@ local function recurse(o, indent)
 	if indent == nil then indent = "" end
 	local indent2 = indent .. '  '
 	if type(o) == "table" then
-		local s = indent .. '{' .. '\n';
+		local s = indent .. 'array {' .. '\n';
 		local first = true;
 		for k,v in pairs(o) do
 			if first == false then s = s .. ', \n' end
@@ -32,10 +32,10 @@ local function recurse(o, indent)
 	end
 end
 
-function var_dump(...)
+function debug(...)
 	local args = {...}
 	if #args > 1 then
-		var_dump(args)
+		debug(args)
 	else
 		notification(recurse(args[1]))
 	end

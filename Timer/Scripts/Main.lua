@@ -1,3 +1,4 @@
+-- Timer window --
 timer = Turbine.UI.Lotro.GoldWindow();
 timer:SetText("Timer");
 timer:SetVisible(true);
@@ -39,9 +40,7 @@ end
 
 function startTimer()
     -- Return if timer is already running --
-    if (timer.running) then
-        return
-    end
+    if (timer.running) then return end
 
     -- Reset sections --
     removeSections();
@@ -69,6 +68,7 @@ function stopTimer()
     timer.sectionElapsedTime = Turbine.Engine.GetGameTime() - timer.sectionStartTime;
     timer:SetWantsUpdates(false);
 
+    -- Update UI --
     nextSectionButton:SetVisible(false);
     stopTimerButton:SetVisible(false);
     startTimerButton:SetVisible(true);
@@ -78,15 +78,14 @@ end
 
 function continueTimer()
     -- Return if timer is already running --
-    if (timer.running) then
-        return
-    end
-    
+    if (timer.running) then return end
+
     timer.running = true;
     timer.startTime = Turbine.Engine.GetGameTime() - timer.elapsedTime;
     timer.sectionStartTime = Turbine.Engine.GetGameTime() - timer.sectionElapsedTime;
     timer:SetWantsUpdates(true);
 
+    -- Update UI --
     startTimerButton:SetVisible(false);
     continueTimerButton:SetVisible(false);
     nextSectionButton:SetVisible(true);
@@ -96,9 +95,7 @@ end
 
 function nextSection()
     -- Only perform this action when time is running --
-    if (not timer.running) then
-        return;
-    end
+    if (not timer.running) then return; end
 
     addSection();
     timer.section = timer.section + 1;
