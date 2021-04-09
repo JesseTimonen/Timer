@@ -1,21 +1,20 @@
--- Import Lotro librarys --
+-- Import Lotro libraries --
 import "Turbine";
 import "Turbine.UI.Lotro";
 
--- Import Utility --
+-- Import scripts that needs to be loaded first --
 import "Timer.Scripts.Notification";
-import "Timer.Scripts.Utility";
 import "Timer.Scripts.SaveLoad";
 
 -- Import initialization --
 import "Timer.Scripts.Init";
 import "Timer.Scripts.Activation";
 
--- Import Scripts --
+-- Import main functionality --
 import "Timer.Scripts.Main";
 
--- Import UI elements --
+-- Import UI components --
 import "Timer.Scripts.UI";
 
--- Import Commands --
+-- Import commands --
 import "Timer.Scripts.Commands";

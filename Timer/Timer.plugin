@@ -1,14 +1,14 @@
 <?xml version = "1.0"?>
 <Plugin> 
-	<Information>
-		<Name>Timer</Name>
-		<Author>Henna</Author>
-		<Version>1.0.5</Version>
-		<Image>Timer/Assets/Images/icon.tga</Image>
+    <Information>
+    <Name>Timer</Name>
+        <Author>Henna</Author>
+        <Version>1.0.6</Version>
+        <Image>Timer/Assets/Images/icon.tga</Image>
 <Description>
 DESCRIPTION
 ¯¯¯¯¯¯¯¯¯¯¯
-This plugin simulates a stopwatch, which can be used to measure duration of different activities (dailies, instances, playtime, etc.) without the need for external software/tool.
+This plugin simulates a stopwatch, which can be used to measure duration of different activities (dailies, instances, playtime, etc.) without the need for external software.
 
 
 
@@ -17,13 +17,10 @@ DEVELOPER NOTES
 ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
 Closing the timer window will not interrupt the timer, so you can close the timer window whenever you want and the timer will stay running in the background.
 
-
 To bring the timer back type the following command into the chat.
-
 /timer
 
 Alternatively you can create a shortcut which toggles the timer's visibility by typing the following command into the chat.
-
 (English)  :  /shortcut 1 /timer
 (German) :  /kurztext 1 /timer
 (French)  :  /raccourci 1 /timer
@@ -31,7 +28,7 @@ Alternatively you can create a shortcut which toggles the timer's visibility by 
 This action will generate a skill to the 1st slot of your skillbar, which allows you to toggle timer's visibility by using it.
 
 
-You are able to control all the timer's functions with commands, and you can create reusable skills from these by typing the following commands into the chat.
+You are able to control all the timer's functions with commands and you can create hotkeys for these actions by typing the following commands into the chat.
 
 (English):
 /shortcut 1 /timer start
@@ -56,19 +53,19 @@ You are able to control all the timer's functions with commands, and you can cre
 
 LIST OF ALL COMMANDS
 ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
-/timer help  -  Displays a list of all available commands.
+/timer help  -  Displays a list of all available commands
 
-/timer  -  Toggles the plugin's visibility.
-/timer toggle  -  Toggles the plugin's visibility.
-/timer show  -  Makes the plugin window visible.
-/timer hide  -  Makes the plugin window hidden.
+/timer  -  Toggles the plugin window visibility
+/timer toggle  -  Toggles the plugin window visibility
+/timer show  -  Makes the plugin window visible
+/timer hide  -  Makes the plugin window hidden
 
-/timer start  -  Starts the timer.
-/timer stop  -  Pauses the timer.
-/timer next  -  Activates next section/lap.
-/timer continue  -  Continues the timer.
+/timer start  -  Starts the timer
+/timer stop  -  Pauses the timer
+/timer continue  -  Continues the timer
+/timer next  -  Activates next section
 </Description>
-	</Information>
-	<Package>Timer.Compiler</Package>
-	<Configuration Apartment = "Timer" />
+    </Information>
+    <Package>Timer.Compiler</Package>
+    <Configuration Apartment = "Timer" />
 </Plugin>

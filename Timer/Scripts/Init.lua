@@ -18,6 +18,3 @@ rgb = {
     error = "<rgb=#FF0000>",
     clear = "</rgb>"
 };
-
--- Load settings --
-loadSettings();

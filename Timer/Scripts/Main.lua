@@ -40,7 +40,7 @@ end
 
 function startTimer()
     -- Return if timer is already running --
-    if (timer.running) then return end
+    if (timer.running) then return; end
 
     -- Reset sections --
     removeSections();
@@ -78,7 +78,7 @@ end
 
 function continueTimer()
     -- Return if timer is already running --
-    if (timer.running) then return end
+    if (timer.running) then return; end
 
     timer.running = true;
     timer.startTime = Turbine.Engine.GetGameTime() - timer.elapsedTime;
@@ -114,4 +114,15 @@ end
 
 function removeSections()
     sections:ClearItems();
+end
+
+
+function getTime(totalTime)
+    -- Parse Hours, minutes, secnds and milliseconds from given time in seconds --
+    return {
+        ["hours"] = totalTime / 3600,
+        ["minutes"] = totalTime % 3600 / 60,
+        ["seconds"] = totalTime % 3600 % 60,
+        ["milliseconds"] = (totalTime % 60 % 1) * 1000
+    };
 end
