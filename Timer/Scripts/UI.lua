@@ -2,7 +2,7 @@
 startTimerButton = Turbine.UI.Lotro.Button();
 startTimerButton:SetParent(timer);
 startTimerButton:SetSize(120);
-startTimerButton:SetPosition(timer:GetWidth()/2 - startTimerButton:GetWidth()/2, timer:GetHeight() - 50);
+startTimerButton:SetPosition(timerWidth/2 - startTimerButton:GetWidth()/2, timerHeight - 50);
 startTimerButton:SetText("Start");
 startTimerButton.Click = function()
     startTimer();
@@ -14,7 +14,7 @@ stopTimerButton = Turbine.UI.Lotro.Button();
 stopTimerButton:SetParent(timer);
 stopTimerButton:SetVisible(false);
 stopTimerButton:SetSize(120);
-stopTimerButton:SetPosition(timer:GetWidth()/2 - startTimerButton:GetWidth()/2, timer:GetHeight() - 50);
+stopTimerButton:SetPosition(timerWidth/2 - startTimerButton:GetWidth()/2, timerHeight - 50);
 stopTimerButton:SetText("Stop");
 stopTimerButton.Click = function()
     stopTimer();
@@ -26,7 +26,7 @@ nextSectionButton = Turbine.UI.Lotro.Button();
 nextSectionButton:SetParent(timer);
 nextSectionButton:SetVisible(false);
 nextSectionButton:SetSize(120);
-nextSectionButton:SetPosition(timer:GetWidth()/2 - startTimerButton:GetWidth()/2, timer:GetHeight() - 80);
+nextSectionButton:SetPosition(timerWidth/2 - startTimerButton:GetWidth()/2, timerHeight - 80);
 nextSectionButton:SetText("Next");
 nextSectionButton.Click = function()
     nextSection();
@@ -38,7 +38,7 @@ continueTimerButton = Turbine.UI.Lotro.Button();
 continueTimerButton:SetParent(timer);
 continueTimerButton:SetVisible(false);
 continueTimerButton:SetSize(120);
-continueTimerButton:SetPosition(timer:GetWidth()/2 - startTimerButton:GetWidth()/2, timer:GetHeight() - 80);
+continueTimerButton:SetPosition(timerWidth/2 - startTimerButton:GetWidth()/2, timerHeight - 80);
 continueTimerButton:SetText("Continue");
 continueTimerButton.Click = function()
     continueTimer();

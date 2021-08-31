@@ -2,15 +2,23 @@
 timer = Turbine.UI.Lotro.GoldWindow();
 timer:SetText("Timer");
 timer:SetVisible(true);
-timer:SetPosition(settings["windowPosition"]["xPos"], settings["windowPosition"]["yPos"]);
-timer:SetSize(300, 400);
+timer:SetPosition(windowPosition["xPos"], windowPosition["yPos"]);
+timer:SetSize(timerWidth, timerHeight);
 timer.running = false;
+timer.updatelimiter = 3;
 timer.section = 1;
 timer.startTime = 0;
 timer.elapsedTime = 0;
 timer.sectionStartTime = 0;
 timer.sectionElapsedTime = 0;
 timer.Update = function()
+
+    -- Limit the amount of calculations we are doing --
+    if (not timer:IsVisible()) then return; end
+    timer.updatelimiter = timer.updatelimiter + 1;
+    if (timer.updatelimiter < 3) then return; end
+    timer.updatelimiter = 0;
+
     local time;
     local spacing;
 
@@ -31,7 +39,7 @@ timer.Update = function()
     else
         spacing = " ";
     end
-
+    
     -- Display section time --
     time = getTime(Turbine.Engine.GetGameTime() - timer.sectionStartTime);
     sections:GetItem(timer.section):SetText(string.format("Section " .. timer.section .. spacing .. "%2.2d:%2.2d:%2.2d:%3.3d", time["hours"], time["minutes"], time["seconds"], time["milliseconds"]));
@@ -63,6 +71,8 @@ end
 
 
 function stopTimer()
+    timer.updatelimiter = 9999;
+    timer.Update();
     timer.running = false;
     timer.elapsedTime = Turbine.Engine.GetGameTime() - timer.startTime;
     timer.sectionElapsedTime = Turbine.Engine.GetGameTime() - timer.sectionStartTime;
@@ -97,6 +107,8 @@ function nextSection()
     -- Only perform this action when time is running --
     if (not timer.running) then return; end
 
+    timer.updatelimiter = 9999;
+    timer.Update();
     addSection();
     timer.section = timer.section + 1;
     timer.sectionStartTime = Turbine.Engine.GetGameTime();

@@ -2,7 +2,7 @@
 import "Turbine";
 import "Turbine.UI.Lotro";
 
--- Import scripts that needs to be loaded first --
+-- Import scripts that are required for other scripts to work --
 import "Timer.Scripts.Notification";
 import "Timer.Scripts.SaveLoad";
 
